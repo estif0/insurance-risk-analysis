@@ -217,7 +217,9 @@ __marimo__/
 .streamlit/secrets.toml
 
 # Other files to ignore
-/data
+/data/*
+!/data/.gitkeep
+!/data/**/*.dvc
 /docs
 /logs
 /temp

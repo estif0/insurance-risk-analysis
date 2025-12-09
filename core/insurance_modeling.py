@@ -124,12 +124,11 @@ class InsuranceModeler:
 
         # Handle missing values (simple imputation)
         for col in numerical_cols:
-            df[col].fillna(df[col].median(), inplace=True)
+            df[col] = df[col].fillna(df[col].median())
 
         for col in categorical_cols:
-            df[col].fillna(
-                df[col].mode()[0] if not df[col].mode().empty else "Unknown",
-                inplace=True,
+            df[col] = df[col].fillna(
+                df[col].mode()[0] if not df[col].mode().empty else "Unknown"
             )
 
         # Encode categorical variables
